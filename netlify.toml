@@ -1,0 +1,6 @@
+# Static site: no build step needed. These settings override the
+# build command / publish directory configured in the Netlify UI.
+[build]
+  command = ""
+  publish = "."
+  functions = "netlify/functions"

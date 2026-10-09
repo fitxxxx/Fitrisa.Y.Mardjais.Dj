@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fitrisa Y Mardjais Djoyo — ICT &amp; Telecommunications Professional</title>
+<meta name="description" content="CV of Fitrisa Y Mardjais Djoyo, ICT & Telecommunications Professional — fiber optic, BTS, OLT, network infrastructure.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0A141C;
+    --panel:#0F1E29;
+    --line:#1C3344;
+    --line-soft:rgba(79,216,199,0.14);
+    --cyan:#4FD8C7;
+    --cyan-dim:#2E7D73;
+    --amber:#F2A154;
+    --text:#E7F1F2;
+    --text-dim:#93A9B3;
+    --text-mute:#5E7684;
+    --font-display:'Space Grotesk',ui-sans-serif,system-ui,sans-serif;
+    --font-body:'IBM Plex Sans',ui-sans-serif,system-ui,sans-serif;
+    --font-mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+    --maxw:900px;
+    --nav-h:64px;
+    color-scheme: dark;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    padding-top:var(--nav-h);
+    background:
+      linear-gradient(var(--line-soft) 1px, transparent 1px) 0 0/100% 42px,
+      linear-gradient(90deg, var(--line-soft) 1px, transparent 1px) 0 0/42px 100%,
+      var(--bg);
+    background-attachment:fixed;
+    color:var(--text);
+    font-family:var(--font-body);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--cyan);
+    outline-offset:3px;
+    border-radius:2px;
+  }
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px;}
+  header.hero, section{scroll-margin-top:calc(var(--nav-h) + 14px);}
+
+  /* ---------- Nav ---------- */
+  .nav{
+    position:fixed; top:0; left:0; right:0; z-index:50;
+    height:var(--nav-h);
+    display:flex; align-items:center;
+    background:rgba(10,20,28,0.78);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:var(--maxw); margin:0 auto; width:100%;
+    padding:0 24px;
+    display:flex; align-items:center; justify-content:space-between; gap:20px;
+  }
+  .logo{
+    font-family:var(--font-mono); font-weight:600; font-size:13px; letter-spacing:.04em;
+    border:1px solid var(--line); border-radius:7px; padding:6px 10px;
+    color:var(--cyan); text-decoration:none; flex:none;
+  }
+  .logo:hover{border-color:var(--cyan-dim);}
+  .nav-menu{display:flex; align-items:center; gap:30px;}
+  .nav-links + .btn-print{margin-left:30px;}
+  .nav-links{display:flex; list-style:none; margin:0; padding:0;}
+  .nav-links li + li{margin-left:26px;}
+  .nav-links a{
+    font-size:13.5px; color:var(--text-dim); text-decoration:none;
+    padding:4px 1px; border-bottom:2px solid transparent;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  .nav-links a:hover{color:var(--text);}
+  .nav-links a.active{color:var(--cyan); border-color:var(--cyan);}
+  .btn-print{
+    font-family:var(--font-mono); font-size:12.5px;
+    border:1px solid var(--line); border-radius:7px;
+    padding:8px 14px; background:transparent; color:var(--text);
+    cursor:pointer; display:inline-flex; align-items:center; gap:8px;
+    transition:border-color .15s ease, color .15s ease;
+  }
+  .btn-print:hover{border-color:var(--cyan-dim); color:var(--cyan);}
+  .btn-print svg{width:14px; height:14px;}
+  .nav-hamburger{
+    display:none; background:transparent; border:1px solid var(--line); border-radius:7px;
+    width:38px; height:38px; align-items:center; justify-content:center; cursor:pointer; color:var(--text);
+  }
+
+  @media (max-width:760px){
+    .nav-hamburger{display:flex;}
+    .nav-menu{
+      position:fixed; top:var(--nav-h); left:0; right:0;
+      background:var(--panel); border-bottom:1px solid var(--line);
+      flex-direction:column; align-items:stretch; gap:16px; padding:18px 24px 22px;
+      transform:translateY(-6px); opacity:0; pointer-events:none;
+      transition:opacity .15s ease, transform .15s ease;
+    }
+    .nav-menu.open{opacity:1; transform:translateY(0); pointer-events:auto;}
+    .nav-links{flex-direction:column; gap:14px;}
+    .btn-print{justify-content:center;}
+  }
+
+  /* ---------- Header / Hero ---------- */
+  header.hero{
+    padding:56px 0 44px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-content{max-width:560px; position:relative; z-index:1;}
+  .hero-graphic{
+    position:absolute; top:-10px; right:-20px; width:380px; height:300px;
+    pointer-events:none;
+  }
+  .hero-graphic .pulse{transform-box:fill-box; transform-origin:center; animation:pulse 2.8s ease-in-out infinite;}
+  .hero-graphic .n2{animation-delay:.9s;}
+  @keyframes pulse{0%,100%{opacity:1; transform:scale(1);} 50%{opacity:.4; transform:scale(1.7);}}
+  @media (max-width:880px){ .hero-graphic{opacity:.5; width:280px; right:-40px;} }
+  @media (max-width:640px){ .hero-graphic{display:none;} }
+
+  .eyebrow-row{
+    display:flex; align-items:center;
+    font-family:var(--font-mono); font-size:12.5px; color:var(--cyan);
+    letter-spacing:.02em; margin-bottom:22px;
+  }
+  .eyebrow-row .dot{
+    width:7px;height:7px;border-radius:50%; background:var(--cyan);
+    box-shadow:0 0 8px 1px var(--cyan); flex:none; margin-right:10px;
+  }
+  h1.name{
+    font-family:var(--font-display); font-weight:700;
+    font-size:clamp(34px, 6vw, 52px); line-height:1.08;
+    margin:0 0 16px; letter-spacing:-0.01em;
+  }
+  .lede{
+    color:var(--text-dim); font-size:16px; margin:0 0 22px; max-width:480px;
+  }
+  .badge-current{
+    display:inline-flex; align-items:center; gap:10px;
+    border:1px solid var(--line); border-radius:999px; padding:9px 16px 9px 14px;
+    font-family:var(--font-mono); font-size:12px; color:var(--text-dim);
+    margin:0 0 26px; background:rgba(242,161,84,.04);
+  }
+  .badge-current .dot{
+    width:7px;height:7px;border-radius:50%; background:var(--amber);
+    box-shadow:0 0 8px 1px var(--amber); flex:none;
+  }
+  .badge-current b{color:var(--text); font-weight:600;}
+
+  .btn-row{display:flex; flex-wrap:wrap; margin-bottom:46px;}
+  .btn-row .btn + .btn{margin-left:12px;}
+  .btn{
+    font-family:var(--font-mono); font-size:13.5px; padding:13px 22px; border-radius:8px;
+    text-decoration:none; display:inline-flex; align-items:center; gap:8px;
+    transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease, color .15s ease;
+    cursor:pointer; border:1px solid transparent;
+  }
+  .btn-primary{background:var(--cyan); color:#06211C; font-weight:600;}
+  .btn-primary:hover{transform:translateY(-1px); box-shadow:0 10px 24px -10px rgba(79,216,199,.55);}
+  .btn-outline{border-color:var(--line); color:var(--text); background:transparent;}
+  .btn-outline:hover{border-color:var(--cyan-dim); color:var(--cyan);}
+
+  /* spec strip: signal bars representing tower heights */
+  .spec-strip{
+    display:flex; align-items:flex-end; gap:36px; flex-wrap:wrap;
+    border-top:1px solid var(--line); padding-top:22px; position:relative; z-index:1;
+  }
+  .spec-item{display:flex; flex-direction:column; gap:8px; flex:0 1 170px; max-width:190px;}
+  .spec-label{font-family:var(--font-mono); font-size:11px; color:var(--text-mute); letter-spacing:.03em;}
+  .spec-value{font-family:var(--font-display); font-weight:600; font-size:22px; color:var(--text);}
+  .bars{display:flex; align-items:flex-end; height:44px;}
+  .bars i + i{margin-left:6px;}
+  .bars i{
+    display:block; width:7px;
+    background:linear-gradient(180deg, var(--cyan), var(--cyan-dim));
+    border-radius:2px 2px 0 0; transform-origin:bottom;
+    animation:grow .9s cubic-bezier(.2,.8,.2,1) both;
+  }
+  @keyframes grow{from{transform:scaleY(0);} to{transform:scaleY(1);}}
+
+  /* ---------- Section shell ---------- */
+  section{padding:46px 0;}
+  .section-head{display:flex; align-items:baseline; margin-bottom:26px;}
+  .section-head h2{font-family:var(--font-display); font-weight:600; font-size:22px; margin:0 14px 0 0;}
+  .section-head .idx{font-family:var(--font-mono); font-size:12px; color:var(--text-mute); margin-right:14px;}
+  .section-head .ln{flex:1; height:1px; background:var(--line);}
+
+  .overview-text{color:var(--text-dim); font-size:15.5px; max-width:680px;}
+  .overview-text strong{color:var(--text); font-weight:600;}
+
+  /* ---------- Key skills ---------- */
+  .skills{display:flex; flex-wrap:wrap; gap:9px;}
+  .skills .skill{margin:0 9px 9px 0;}
+  .skill{
+    font-family:var(--font-mono); font-size:13px; color:var(--text-dim);
+    border:1px solid var(--line); padding:7px 12px; border-radius:6px;
+  }
+
+  /* ---------- Experience timeline ---------- */
+  .timeline{position:relative; margin-left:4px; padding-left:28px; border-left:1px solid var(--line);}
+  .entry{position:relative; padding-bottom:36px;}
+  .entry:last-child{padding-bottom:0;}
+  .entry::before{
+    content:""; position:absolute; left:-33px; top:5px; width:9px;height:9px;
+    border-radius:50%; background:var(--bg); border:2px solid var(--cyan);
+  }
+  .entry.alt::before{border-color:var(--amber);}
+  .entry-meta{
+    display:flex; flex-wrap:wrap; align-items:center; gap:10px;
+    font-family:var(--font-mono); font-size:12px; color:var(--text-mute); margin-bottom:6px;
+  }
+  .entry-title{font-family:var(--font-display); font-weight:600; font-size:17.5px; margin:0 0 3px;}
+  .entry-company{color:var(--cyan); font-size:14px; margin:0 0 12px;}
+  .entry ul{margin:0; padding-left:18px; color:var(--text-dim); font-size:14.5px;}
+  .entry li{margin-bottom:6px;}
+  .entry li:last-child{margin-bottom:0;}
+
+  .tower-chart{
+    display:flex; align-items:flex-end; margin:14px 0 16px; padding:14px 16px;
+    border:1px solid var(--line); border-radius:8px; background:rgba(79,216,199,.03);
+    width:max-content;
+  }
+  .tower-chart .t{display:flex; flex-direction:column; align-items:center; gap:6px;}
+  .tower-chart .t + .t{margin-left:14px;}
+  .tower-chart .bar{
+    width:16px; background:linear-gradient(180deg, var(--amber), var(--cyan-dim));
+    border-radius:2px 2px 0 0; animation:grow .9s cubic-bezier(.2,.8,.2,1) both;
+  }
+  .tower-chart .lbl{font-family:var(--font-mono); font-size:11px; color:var(--text-mute);}
+
+  /* ---------- Two column: education / certifications ---------- */
+  .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:36px;}
+  .block h3{font-family:var(--font-display); font-weight:600; font-size:15px; margin:0 0 14px; color:var(--text);}
+  .block p{margin:0 0 4px; font-size:14.5px; color:var(--text-dim);}
+  .block .deg{font-weight:500; color:var(--text);}
+  .cert-list, .lang-list{list-style:none; margin:0; padding:0;}
+  .cert-list li, .lang-list li{font-size:14.5px; color:var(--text-dim); padding:9px 0; border-top:1px solid var(--line);}
+  .cert-list li:first-child, .lang-list li:first-child{border-top:none;}
+  .lang-list li{display:flex; justify-content:space-between; gap:10px;}
+  .lang-list .lvl{font-family:var(--font-mono); font-size:12px; color:var(--cyan);}
+
+  /* ---------- Contact ---------- */
+  .contact-intro{color:var(--text-dim); font-size:15.5px; max-width:520px; margin:0 0 26px;}
+  .contact-row{display:flex; flex-wrap:wrap; gap:12px;}
+  .contact-row .contact-chip{margin:0 12px 12px 0;}
+  .contact-chip{
+    display:inline-flex; align-items:center; gap:9px;
+    padding:11px 18px 11px 14px; border:1px solid var(--line); border-radius:999px;
+    text-decoration:none; font-family:var(--font-mono); font-size:13px; color:var(--text);
+    background:rgba(79,216,199,0.03); transition:border-color .15s ease, background .15s ease, transform .15s ease;
+  }
+  .contact-chip:hover{border-color:var(--cyan-dim); background:rgba(79,216,199,0.08); transform:translateY(-1px);}
+  .contact-chip svg{width:16px;height:16px;flex:none;color:var(--cyan);}
+
+  /* ---------- Footer ---------- */
+  footer{padding:40px 0 60px; border-top:1px solid var(--line); margin-top:10px;}
+  footer .ft-note{font-family:var(--font-mono); font-size:12px; color:var(--text-mute);}
+
+  @media (max-width:640px){
+    .grid-2{grid-template-columns:1fr;}
+    .timeline{padding-left:22px;}
+    .entry::before{left:-27px;}
+    header.hero{padding-top:40px;}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    .bars i, .tower-chart .bar{animation:none;}
+    .hero-graphic .pulse{animation:none;}
+  }
+
+  /* ---------- Print / Save as PDF ---------- */
+  @media print{
+    .nav, .hero-graphic, .btn-row, footer{display:none !important;}
+    body{background:#fff !important; color:#111 !important; padding-top:0 !important;}
+    a{color:#111 !important; text-decoration:underline;}
+    .eyebrow-row{color:#444 !important;}
+    .eyebrow-row .dot{background:#444 !important; box-shadow:none !important;}
+    h1.name{color:#000 !important;}
+    .lede, .overview-text, .entry ul, .block p, .cert-list li, .lang-list li, .ft-note{color:#333 !important;}
+    .overview-text strong{color:#000 !important;}
+    .entry-company{color:#000 !important; font-weight:600;}
+    .section-head .ln{background:#ccc !important;}
+    .section-head .idx{color:#777 !important;}
+    .skill{border-color:#bbb !important; color:#222 !important;}
+    .entry::before{border-color:#000 !important; background:#fff !important;}
+    .entry.alt::before{border-color:#777 !important;}
+    .timeline{border-color:#ccc !important;}
+    .tower-chart{border-color:#ccc !important; background:#fff !important;}
+    .tower-chart .bar, .bars i{background:#999 !important;}
+    .contact-row, .contact-chip{border-color:#ccc !important; background:#fff !important; color:#111 !important;}
+    .contact-chip svg{color:#111 !important;}
+    .badge-current{border-color:#ccc !important; background:#fff !important; color:#111 !important;}
+    .badge-current .dot{background:#777 !important; box-shadow:none !important;}
+    .badge-current b{color:#000 !important;}
+    section{padding:14px 0 !important; page-break-inside:avoid;}
+    .wrap{max-width:100% !important;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="logo">FYM</a>
+    <button class="nav-hamburger" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="Toggle menu">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+    </button>
+    <div class="nav-menu" id="navMenu">
+      <ul class="nav-links">
+        <li><a href="#overview" data-nav>Overview</a></li>
+        <li><a href="#experience" data-nav>Experience</a></li>
+        <li><a href="#skills" data-nav>Skills</a></li>
+        <li><a href="#contact" data-nav>Contact</a></li>
+      </ul>
+      <button class="btn-print" id="printBtn" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 9V3h12v6"/><rect x="4" y="9" width="16" height="8" rx="1.5"/><path d="M6 17v4h12v-4"/></svg>
+        Print / Save PDF
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <header class="hero" id="top">
+    <svg class="hero-graphic" viewBox="0 0 400 300" aria-hidden="true">
+      <g stroke="#1C3344" stroke-width="1">
+        <line x1="60" y1="40" x2="150" y2="90"/>
+        <line x1="150" y1="90" x2="230" y2="50"/>
+        <line x1="150" y1="90" x2="140" y2="170"/>
+        <line x1="140" y1="170" x2="235" y2="195"/>
+        <line x1="230" y1="50" x2="305" y2="28"/>
+        <line x1="235" y1="195" x2="312" y2="162"/>
+        <line x1="140" y1="170" x2="62" y2="212"/>
+      </g>
+      <circle cx="60" cy="40" r="4" fill="#4FD8C7"/>
+      <circle class="pulse" cx="150" cy="90" r="5" fill="#4FD8C7"/>
+      <circle cx="230" cy="50" r="4" fill="#F2A154"/>
+      <circle cx="305" cy="28" r="3.5" fill="#4FD8C7"/>
+      <circle class="pulse n2" cx="140" cy="170" r="5" fill="#4FD8C7"/>
+      <circle cx="235" cy="195" r="4" fill="#4FD8C7"/>
+      <circle cx="312" cy="162" r="3.5" fill="#F2A154"/>
+      <circle cx="62" cy="212" r="3.5" fill="#4FD8C7"/>
+    </svg>
+
+    <div class="hero-content">
+      <div class="eyebrow-row"><span class="dot"></span>ICT &amp; TELECOMMUNICATIONS INFRASTRUCTURE</div>
+      <h1 class="name">Fitrisa Y Mardjais Djoyo</h1>
+      <p class="lede">
+        Field-tested across QA/QC, BTS, maintenance, OLT, and infrastructure leadership on major
+        national FiberHome–BAKTI telecom projects — now leading ICT operations on-site.
+      </p>
+
+      <div class="badge-current">
+        <span class="dot"></span>
+        Currently: <b>Team Leader On-Site, ICT &amp; Infrastructure</b> @ Sampoerna Kayoe · since Jan 2026
+      </div>
+
+      <div class="btn-row">
+        <a href="#experience" class="btn btn-primary">View experience</a>
+        <a href="#contact" class="btn btn-outline">Get in touch</a>
+      </div>
+    </div>
+
+    <div class="spec-strip">
+      <div class="spec-item">
+        <span class="spec-value">5+</span>
+        <span class="spec-label">YEARS — ICT &amp; TELECOM</span>
+      </div>
+      <div class="spec-item">
+        <span class="spec-value">6</span>
+        <span class="spec-label">ROLES ACROSS 2 INDUSTRIES</span>
+      </div>
+      <div class="spec-item">
+        <span class="spec-value">32–72m</span>
+        <span class="spec-label">BTS TOWERS EXECUTED</span>
+      </div>
+      <div class="spec-item">
+        <span class="spec-label" style="margin-bottom:2px;">SIGNAL</span>
+        <div class="bars" aria-hidden="true">
+          <i style="height:40%; animation-delay:.05s;"></i>
+          <i style="height:58%; animation-delay:.12s;"></i>
+          <i style="height:76%; animation-delay:.19s;"></i>
+          <i style="height:100%; animation-delay:.26s;"></i>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- OVERVIEW -->
+  <section id="overview">
+    <div class="section-head"><span class="idx">01</span><h2>Summary</h2><span class="ln"></span></div>
+    <p class="overview-text">
+      <strong>A dedicated and versatile ICT &amp; Telecommunications professional</strong> with proven experience
+      spanning QA/QC, BTS, maintenance, OLT, and ICT infrastructure roles across major BAKTI FiberHome
+      (telecommunications industry, partnered with Telkom &amp; Telkomsel) projects and the manufacturing industry.
+      Currently serving as Team Leader On-Site ICT &amp; Infrastructure at Sampoerna Kayoe, overseeing WiFi
+      installation, CCTV systems, and fiber optic cabling within a factory environment. Proficient in NMS
+      applications for monitoring and configuring network devices, with hands-on expertise in fiber optic
+      installation, OLT configuration, Mikrotik/VLAN network setup, and troubleshooting. Demonstrates strong
+      leadership, coordination, and problem-solving abilities in both field and industrial settings, with a
+      consistent track record of maintaining network stability and delivering quality results.
+    </p>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-head"><span class="idx">02</span><h2>Experience</h2><span class="ln"></span></div>
+
+    <div class="timeline">
+
+      <div class="entry">
+        <div class="entry-meta">JAN 2026 — PRESENT</div>
+        <h3 class="entry-title">Team Leader On Site ICT &amp; Infrastructure</h3>
+        <p class="entry-company">Sampoerna Kayoe</p>
+        <ul>
+          <li>Led ICT and infrastructure operations across network systems, hardware, and connectivity for company facilities.</li>
+          <li>Handled end-to-end WiFi installation, CCTV systems, and in-factory fiber optic cabling.</li>
+          <li>Configured Mikrotik routers and implemented VLAN segmentation to secure and optimize facility networks.</li>
+          <li>Performed servicing and maintenance of laptops, printers, and other IT hardware to minimize downtime.</li>
+          <li>Coordinated with vendors, contractors, and internal stakeholders on infrastructure upgrades.</li>
+        </ul>
+      </div>
+
+      <div class="entry alt">
+        <div class="entry-meta">APR 2025 — JUN 2025</div>
+        <h3 class="entry-title">OLT Engineer</h3>
+        <p class="entry-company">Engineer On Site TFC — telecommunications industry</p>
+        <ul>
+          <li>Installed, configured, and troubleshot OLT devices across FTTH networks.</li>
+          <li>Monitored network performance and coordinated with technical teams on connectivity issues.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-meta">APR 2023 — 2024</div>
+        <h3 class="entry-title">Supervisor Maintenance Engineer</h3>
+        <p class="entry-company">FiberHome — telecommunications industry · BAKTI Project</p>
+        <ul>
+          <li>Conducted routine maintenance and troubleshooting of telecom devices and network systems.</li>
+          <li>Monitored network devices and site status (TT) using NMS.</li>
+          <li>Coordinated with contractors and stakeholders across all project stages.</li>
+        </ul>
+      </div>
+
+      <div class="entry alt">
+        <div class="entry-meta">JUL 2022 — APR 2023</div>
+        <h3 class="entry-title">Supervisor BTS Engineer</h3>
+        <p class="entry-company">FiberHome — telecommunications industry · BAKTI Project</p>
+        <ul>
+          <li>Managed installation and configuration of Base Transceiver Stations (BTS).</li>
+          <li>Conducted site surveys and supervised field teams to meet quality standards.</li>
+          <li>Monitored device and site status (OA) using NMS.</li>
+        </ul>
+        <div class="tower-chart" aria-hidden="true">
+          <div class="t"><div class="bar" style="height:22px; animation-delay:.05s;"></div><span class="lbl">32m</span></div>
+          <div class="t"><div class="bar" style="height:30px; animation-delay:.12s;"></div><span class="lbl">42m</span></div>
+          <div class="t"><div class="bar" style="height:38px; animation-delay:.19s;"></div><span class="lbl">52m</span></div>
+          <div class="t"><div class="bar" style="height:50px; animation-delay:.26s;"></div><span class="lbl">72m</span></div>
+        </div>
+        <p style="font-family:var(--font-mono); font-size:11.5px; color:var(--text-mute); margin:-6px 0 0;">Towers executed, by height</p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-meta">OCT 2021 — JUL 2022</div>
+        <h3 class="entry-title">Supervisor QA/QC</h3>
+        <p class="entry-company">FiberHome — telecommunications industry · BAKTI Project</p>
+        <ul>
+          <li>Supervised implementation of project quality standards per FiberHome and BAKTI requirements.</li>
+          <li>Conducted on-site inspections and internal audits of tower installations.</li>
+          <li>Prepared quality reports and coordinated with technical teams to resolve field issues.</li>
+        </ul>
+      </div>
+
+      <div class="entry alt">
+        <div class="entry-meta">JAN 2019 — MAY 2020</div>
+        <h3 class="entry-title">Printing Production Staff</h3>
+        <p class="entry-company">Signature Banda Neira Clothing</p>
+        <ul>
+          <li>Supervised the printing production process to meet schedules and quality standards.</li>
+          <li>Checked raw materials, printing results, and performed machine maintenance.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- KEY SKILLS -->
+  <section id="skills">
+    <div class="section-head"><span class="idx">03</span><h2>Key Skills</h2><span class="ln"></span></div>
+    <div class="skills">
+      <span class="skill">Mikrotik Configuration</span>
+      <span class="skill">VLAN Segmentation</span>
+      <span class="skill">LAN / WAN Infrastructure</span>
+      <span class="skill">Fiber Optic Installation &amp; Splicing</span>
+      <span class="skill">OLT Configuration</span>
+      <span class="skill">FTTH Networks</span>
+      <span class="skill">NMS Monitoring</span>
+      <span class="skill">BTS &amp; Tower Installation</span>
+      <span class="skill">CCTV Installation &amp; Monitoring</span>
+      <span class="skill">WiFi / Access Point Config</span>
+      <span class="skill">Laptop &amp; Printer Servicing</span>
+      <span class="skill">Hardware / IT Maintenance</span>
+      <span class="skill">QA/QC Inspection</span>
+      <span class="skill">ICT Infrastructure Management</span>
+      <span class="skill">Network Troubleshooting</span>
+      <span class="skill">Team Leadership &amp; Coordination</span>
+    </div>
+  </section>
+
+  <!-- EDUCATION + CERTIFICATIONS -->
+  <section id="education">
+    <div class="section-head"><span class="idx">04</span><h2>Education &amp; Certifications</h2><span class="ln"></span></div>
+    <div class="grid-2">
+      <div class="block">
+        <h3>Education</h3>
+        <p class="deg">Bachelor's Degree in Economic Management</p>
+        <p>IQRA Buru University · Graduated 2025</p>
+      </div>
+      <div class="block">
+        <h3>Certifications</h3>
+        <ul class="cert-list">
+          <li>RWID Remote Worker Indonesia — Python, MS Office, Excel, PowerPoint (2023)</li>
+          <li>Pare Dise English Course — Speaking, Pronunciation, Grammar (2016)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- LANGUAGES -->
+  <section id="languages">
+    <div class="section-head"><span class="idx">05</span><h2>Languages</h2><span class="ln"></span></div>
+    <ul class="lang-list" style="max-width:360px;">
+      <li>Bahasa Indonesia <span class="lvl">NATIVE</span></li>
+      <li>English <span class="lvl">GOOD PROFICIENCY</span></li>
+    </ul>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-head"><span class="idx">06</span><h2>Contact</h2><span class="ln"></span></div>
+    <p class="contact-intro">
+      Open to ICT infrastructure, network engineering, and field operations roles.
+      Reach out directly — WhatsApp and email both get a fast reply.
+    </p>
+    <div class="contact-row">
+      <a class="contact-chip" href="https://wa.me/6282239109703" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 12a8 8 0 1 1-3.6-6.7"/><path d="M20 4l-4 4"/><path d="M8.5 9.5c.3 2.6 2.6 4.9 5.2 5.2l1-1.3c.2-.3.6-.4.9-.3l2 .7c.4.1.6.5.6.9-.1 1.6-1.6 2.7-3.2 2.4-4-0.8-7.1-3.9-7.9-7.9-.3-1.6.8-3.1 2.4-3.2.4 0 .8.2.9.6l.7 2c.1.3 0 .7-.3.9z"/></svg>
+        082239109703
+      </a>
+      <a class="contact-chip" href="mailto:djoyofitrisa@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+        djoyofitrisa@gmail.com
+      </a>
+      <a class="contact-chip" href="https://www.linkedin.com/in/fitrisa-y-mardjais-djoyo6807a3146" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="7.5" y1="10.5" x2="7.5" y2="16.5"/><circle cx="7.5" cy="7" r="0.6" fill="currentColor"/><path d="M11.5 16.5v-4a2 2 0 0 1 4 0v4"/><line x1="11.5" y1="10.5" x2="11.5" y2="16.5"/></svg>
+        linkedin.com/in/fitrisa-y-mardjais-djoyo
+      </a>
+      <span class="contact-chip" style="cursor:default;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        Letwaru, Maluku
+      </span>
+    </div>
+  </section>
+
+  <footer>
+    <span class="ft-note">FITRISA Y MARDJAIS DJOYO — BUILT AS A STATIC SITE</span>
+  </footer>
+
+</div>
+
+<script>
+  // Print / Save as PDF
+  document.getElementById('printBtn').addEventListener('click', function(){
+    window.print();
+  });
+
+  // Mobile nav toggle
+  var navToggle = document.getElementById('navToggle');
+  var navMenu = document.getElementById('navMenu');
+  navToggle.addEventListener('click', function(){
+    var open = navMenu.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  document.querySelectorAll('.nav-links a').forEach(function(a){
+    a.addEventListener('click', function(){
+      navMenu.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Scrollspy for active nav link
+  var navLinks = document.querySelectorAll('.nav-links a[data-nav]');
+  var spySections = ['overview','experience','skills','contact']
+    .map(function(id){ return document.getElementById(id); })
+    .filter(Boolean);
+
+  if ('IntersectionObserver' in window && spySections.length){
+    var spy = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting){
+          var id = entry.target.id;
+          navLinks.forEach(function(l){
+            l.classList.toggle('active', l.getAttribute('href') === '#' + id);
+          });
+        }
+      });
+    }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
+    spySections.forEach(function(s){ spy.observe(s); });
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+# Static site: no build step, serve files from the repo root.
+[build]
+  command = "echo 'No build step required'"
+  publish = "."
+  functions = "netlify/functions"
